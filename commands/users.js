@@ -2,11 +2,13 @@ const { EmbedBuilder } = require('discord.js');
 
 async function users(interaction) {
   const res = await fetch(`http://localhost:8080/v1/users`);
-  const data = await res.json(); // Supondo que seja um array de usuários
-
-  if (!Array.isArray(data) || data.length === 0) {
+  const response = await res.json();
+  
+  if (!response.success || !Array.isArray(response.data) || response.data.length === 0) {
     return interaction.reply('❌ Nenhum usuário encontrado.');
   }
+  
+  const data = response.data;  
 
   const pageSize = 5;
   let page = 0;

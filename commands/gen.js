@@ -5,10 +5,13 @@ async function gen(mensagem) {
     body: JSON.stringify({ texto: mensagem }),
   });
 
-  const data = await res.json();
-  console.log(data);
+  const response = await res.json();
+  if (!response.success) {
+     return response.mensagem;
+  }
+  console.log(response);
 
-  return data;
+  return response.data;
 }
 
 module.exports = { gen };
