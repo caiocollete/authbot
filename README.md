@@ -31,6 +31,8 @@ CLIENT_ID=seu_client_aqui
 GUILD_ID=seu_guild_aqui
 ```
 
+Clone [AuthApi](https://github.com/caiocollete/authapi) e siga o tutorial do [README](https://github.com/caiocollete/authapi/blob/main/README.md)
+
 ## ✅ Rodando o Bot
 
 ```bash
