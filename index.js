@@ -28,9 +28,15 @@ client.on(Events.InteractionCreate, async interaction => {
   if (commandName === 'gen') {
     const mensagem = interaction.options.getString('mensagem');
     const resposta = await gen(mensagem);
-    await interaction.reply(`🔑 Token gerado com sucesso! ||${resposta.id}||`);
+  
+    // Se resposta for string, é erro
+    if (typeof resposta === 'string') {
+      await interaction.reply(`❌ Erro ao gerar token: ${resposta}`);
+    } else {
+      await interaction.reply(`🔑 Token gerado com sucesso! ||${resposta.id}||`);
+    }
   }
-
+  
   if(commandName === 'users'){
     const resposta = await users(interaction);
   }

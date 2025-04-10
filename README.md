@@ -29,6 +29,7 @@ Crie um arquivo `.env` com seu token do Discord:
 DISCORD_TOKEN=seu_token_aqui
 CLIENT_ID=seu_client_aqui
 GUILD_ID=seu_guild_aqui
+APIKEY=sua_chave_api_aqui
 ```
 
 Clone [AuthApi](https://github.com/caiocollete/authapi) e siga o tutorial do [README](https://github.com/caiocollete/authapi/blob/main/README.md)

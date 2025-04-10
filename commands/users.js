@@ -1,7 +1,13 @@
 const { EmbedBuilder } = require('discord.js');
 
 async function users(interaction) {
-  const res = await fetch(`http://localhost:8080/v1/users`);
+  const res = await fetch(`http://localhost:8080/v1/users`,
+    {
+      headers:{
+        'X-API-KEY': process.env.APIKEY
+      }
+    }
+  );
   const response = await res.json();
   
   if (!response.success || !Array.isArray(response.data) || response.data.length === 0) {
