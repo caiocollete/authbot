@@ -45,7 +45,7 @@ async function gen(mensagem, interaction) {
 
     const embed = new EmbedBuilder()
       .setTitle('🔑 Key Gerada com Sucesso')
-      .setDescription('Use esta key para ser cadastrar autenticar.')
+      .setDescription('Use esta key para se cadastrar.')
       .addFields(
         { name: 'Key', value: `||${response.data.id}||`, inline: false },
         { name: 'Expira em', value: timeLeft || 'Desconhecido', inline: false }
